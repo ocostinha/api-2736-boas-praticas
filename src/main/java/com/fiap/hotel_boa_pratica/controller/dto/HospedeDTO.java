@@ -15,6 +15,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class HospedeDTO {
 
+    private Integer id;
+
     @NotEmpty
     private String nomeCompleto;
 
@@ -32,5 +34,7 @@ public class HospedeDTO {
     private String ddd;
 
     private String telefone;
+
+    private String pais;
 
 }

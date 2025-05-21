@@ -34,4 +34,6 @@ public class Hospede {
 
     private LocalDateTime dataAtualizacao;
 
+    private String pais;
+
 }

@@ -54,4 +54,7 @@ public class HospedeEntity {
     @Column
     private LocalDateTime dataAtualizacao;
 
+    @Column
+    private String pais;
+
 }
