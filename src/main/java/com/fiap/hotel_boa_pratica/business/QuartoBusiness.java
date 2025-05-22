@@ -50,4 +50,9 @@ public class QuartoBusiness {
         return quartoService.findByStatusOrTipoAcomodacaoOrNumeroQuarto(status, tipoAcomodacao, numeroQuarto);
     }
 
+    public Quarto findByNumeroQuarto(final String numeroQuarto) {
+        return quartoService.findByNumeroQuarto(numeroQuarto)
+            .orElseThrow(() -> new RegraDeNegocioException("Quarto não encontrado"));
+    }
+
 }
