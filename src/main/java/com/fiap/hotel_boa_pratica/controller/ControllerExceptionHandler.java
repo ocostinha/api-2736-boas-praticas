@@ -1,6 +1,7 @@
 package com.fiap.hotel_boa_pratica.controller;
 
 import com.fiap.hotel_boa_pratica.exception.MenorDeIdadeException;
+import com.fiap.hotel_boa_pratica.exception.RegraDeNegocioException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -34,6 +35,16 @@ public class ControllerExceptionHandler {
     @ExceptionHandler(MenorDeIdadeException.class)
     public Map<String, String> handleMenorDeIdadeExceptions(
             MenorDeIdadeException ex) {
+        Map<String, String> errors = new HashMap<>();
+        errors.put("erro", ex.getMessage());
+
+        return errors;
+    }
+
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    @ExceptionHandler(RegraDeNegocioException.class)
+    public Map<String, String> handleRegraDeNegocioExceptions(
+            RegraDeNegocioException ex) {
         Map<String, String> errors = new HashMap<>();
         errors.put("erro", ex.getMessage());
 
